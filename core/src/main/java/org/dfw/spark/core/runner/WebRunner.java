@@ -30,7 +30,7 @@ public class WebRunner {
      * @param context 上下文地址
      * @param port    端口号
      */
-    public void start(String context,int port) throws Exception {
+    public void start(String context, int port) throws Exception {
         try {
 
             // web app config
