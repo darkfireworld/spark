@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>web</artifactId>
+    <artifactId>web-echo</artifactId>
 
     <dependencies>
         <dependency>
@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>org.dfw</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>api-echo</artifactId>
             <version>${parent.version}</version>
         </dependency>
     </dependencies>
