@@ -1,4 +1,4 @@
-package org.dfw.spark.core.http;
+package org.dfw.spark.core.template;
 
 
 import okhttp3.*;

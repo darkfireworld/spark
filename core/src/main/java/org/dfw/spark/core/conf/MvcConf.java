@@ -25,7 +25,7 @@ import java.util.List;
  * Spring MVC 配置
  */
 @EnableWebMvc
-public class MvcConf extends WebMvcConfigurerAdapter {
+public abstract class MvcConf extends WebMvcConfigurerAdapter {
     // 上传组件
     @Bean
     public MultipartResolver multipartResolver() {

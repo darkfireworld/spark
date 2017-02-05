@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
  */
 @EnableAsync
 @EnableScheduling
-public class ExecutorConf implements SchedulingConfigurer, AsyncConfigurer {
+public abstract class ExecutorConf implements SchedulingConfigurer, AsyncConfigurer {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override

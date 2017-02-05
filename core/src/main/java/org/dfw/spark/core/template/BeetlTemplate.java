@@ -1,4 +1,4 @@
-package org.dfw.spark.core.beetl;
+package org.dfw.spark.core.template;
 
 import org.beetl.core.Configuration;
 import org.beetl.core.GroupTemplate;

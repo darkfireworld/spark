@@ -13,10 +13,10 @@
 
 ## 分层说明
 
-* core 通用配置和工具
-* api-xxx xxx业务模块api
-* service-xxx xxx业务模块实现
-* web-xxx xxx的web功能
+* core: 通用配置和基础类，不支持自动配置（如：@Component，@Value等）
+* api-xxx 业务模块api
+* service-xxx 业务模块实现
+* web-xxx web模块
 
 ## RoadMap
 

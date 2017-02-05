@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 /**
  * MyBatis配置
  */
-public class MyBatisConf {
+public abstract class MyBatisConf {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();

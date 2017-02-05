@@ -10,22 +10,37 @@ import org.springframework.context.event.ContextRefreshedEvent;
 /**
  * Motan 配置
  */
-// TODO 配置
-public class MotanConf {
+public abstract class MotanConf {
+    // 心跳
+    boolean heartbeat;
+    // zk地址，例如：192.168.137.32:2181
+    String zk;
+    // 服务端口号
+    int port;
+    // 服务版本号
+    String version;
+
+    public MotanConf(boolean heartbeat, String zk, int port, String version) {
+        this.heartbeat = heartbeat;
+        this.zk = zk;
+        this.port = port;
+        this.version = version;
+    }
 
     @Bean
     public ApplicationListener motanListener() {
         return new ApplicationListener<ContextRefreshedEvent>() {
             @Override
             public void onApplicationEvent(ContextRefreshedEvent event) {
-                MotanSwitcherUtil.setSwitcherValue(MotanConstants.REGISTRY_HEARTBEAT_SWITCHER, true);
+                if (heartbeat) {
+                    MotanSwitcherUtil.setSwitcherValue(MotanConstants.REGISTRY_HEARTBEAT_SWITCHER, true);
+                }
             }
         };
     }
 
     @Bean
     public AnnotationBean motanAnnotationBean() {
-
         return new AnnotationBean();
     }
 
@@ -33,7 +48,7 @@ public class MotanConf {
     public RegistryConfigBean motanRegistry() {
         RegistryConfigBean config = new RegistryConfigBean();
         config.setRegProtocol("zookeeper");
-        config.setAddress("192.168.137.32:2181");
+        config.setAddress(zk);
         return config;
     }
 
@@ -48,9 +63,9 @@ public class MotanConf {
     public BasicServiceConfigBean baseServiceConfig() {
         BasicServiceConfigBean config = new BasicServiceConfigBean();
         config.setShareChannel(true);
-        config.setExport("motanProtocol:8082");
+        config.setExport(String.format("motanProtocol:%s", String.valueOf(port)));
         config.setRegistry("motanRegistry");
-        config.setVersion("1.0.0");
+        config.setVersion(version);
         return config;
     }
 
@@ -59,7 +74,7 @@ public class MotanConf {
         BasicRefererConfigBean config = new BasicRefererConfigBean();
         config.setProtocol("motanProtocol");
         config.setRegistry("motanRegistry");
-        config.setVersion("1.0.0");
+        config.setVersion(version);
         return config;
     }
 }
