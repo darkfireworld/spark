@@ -2,7 +2,7 @@ package org.dfw.spark.web.mvc;
 
 import com.weibo.api.motan.config.springsupport.annotation.MotanReferer;
 import org.dfw.spark.api.echo.EchoService;
-import org.dfw.spark.core.support.dto.Dto;
+import org.dfw.spark.core.dto.Dto;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

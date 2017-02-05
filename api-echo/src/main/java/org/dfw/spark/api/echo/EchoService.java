@@ -1,6 +1,6 @@
 package org.dfw.spark.api.echo;
 
-import org.dfw.spark.core.support.dto.Dto;
+import org.dfw.spark.core.dto.Dto;
 
 /**
  * Test

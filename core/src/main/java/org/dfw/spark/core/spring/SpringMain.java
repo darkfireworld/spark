@@ -1,6 +1,6 @@
 package org.dfw.spark.core.spring;
 
-import org.dfw.spark.core.io.constant.Constant;
+import org.dfw.spark.core.constant.Constant;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

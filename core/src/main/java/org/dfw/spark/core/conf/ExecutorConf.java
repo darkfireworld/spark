@@ -1,6 +1,5 @@
 package org.dfw.spark.core.conf;
 
-import org.dfw.spark.core.spring.SpringMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;

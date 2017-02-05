@@ -2,9 +2,9 @@ package org.dfw.spark.core.conf;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.alibaba.fastjson.support.spring.FastJsonJsonView;
-import org.dfw.spark.core.support.dto.Dto;
-import org.dfw.spark.core.support.dto.DtoInternalCode;
-import org.dfw.spark.core.support.dto.DtoInternalException;
+import org.dfw.spark.core.dto.Dto;
+import org.dfw.spark.core.dto.DtoInternalCode;
+import org.dfw.spark.core.dto.DtoInternalException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,7 @@
 package org.dfw.spark.core.conf;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.dfw.spark.core.io.constant.Constant;
+import org.dfw.spark.core.constant.Constant;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;

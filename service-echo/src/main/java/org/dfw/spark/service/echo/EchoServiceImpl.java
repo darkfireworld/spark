@@ -2,7 +2,7 @@ package org.dfw.spark.service.echo;
 
 import com.weibo.api.motan.config.springsupport.annotation.MotanService;
 import org.dfw.spark.api.echo.EchoService;
-import org.dfw.spark.core.support.dto.Dto;
+import org.dfw.spark.core.dto.Dto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
