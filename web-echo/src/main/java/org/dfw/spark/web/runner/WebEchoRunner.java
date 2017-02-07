@@ -1,6 +1,7 @@
 package org.dfw.spark.web.runner;
 
 import org.dfw.spark.core.conf.ExecutorConf;
+import org.dfw.spark.core.conf.LogbackConf;
 import org.dfw.spark.core.conf.MotanConf;
 import org.dfw.spark.core.conf.MvcConf;
 import org.dfw.spark.core.runner.WebRunner;
@@ -31,5 +32,13 @@ public class WebEchoRunner {
     @Configuration
     public static class AppExecutorConf extends ExecutorConf {
 
+    }
+
+    @Configuration
+    public static class AppLogbackConf extends LogbackConf {
+
+        public AppLogbackConf() {
+            super("/var/log/web/", "TRACE");
+        }
     }
 }

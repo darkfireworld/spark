@@ -101,6 +101,11 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+        </dependency>
+
         <!--guava-->
         <dependency>
             <groupId>com.google.guava</groupId>

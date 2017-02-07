@@ -1,5 +1,6 @@
 package org.dfw.spark.service.runner;
 
+import org.dfw.spark.core.conf.LogbackConf;
 import org.dfw.spark.core.conf.MotanConf;
 import org.dfw.spark.core.runner.JarRunner;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,14 @@ public class ServiceEchoRunner {
 
         public AppMotanConf() {
             super(true, "192.168.137.32:2181", 8020, "1.0.0");
+        }
+    }
+
+    @Configuration
+    public static class AppLogbackConf extends LogbackConf {
+
+        public AppLogbackConf() {
+            super("/var/log/service/", "TRACE");
         }
     }
 }

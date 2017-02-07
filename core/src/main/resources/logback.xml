@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--使用变量logback-dir和logback-level配置日志系统-->
+    <!--具体配置文档见：https://logback.qos.ch/manual/configuration.html-->
+
+    <!--文件 -->
+    <if condition='isDefined("logback-dir")'>
+        <then>
+            <appender name="FILE_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <file>${logback-dir}/log.log</file>
+
+                <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+                    <fileNamePattern>${logback-dir}/log.%i.log.zip</fileNamePattern>
+                    <minIndex>1</minIndex>
+                    <maxIndex>12</maxIndex>
+                </rollingPolicy>
+
+                <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+                    <maxFileSize>32MB</maxFileSize>
+                </triggeringPolicy>
+
+                <encoder>
+                    <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+                </encoder>
+            </appender>
+            <root>
+                <appender-ref ref="FILE_OUT" />
+            </root>
+        </then>
+    </if>
+    <!--输出到控制台-->
+    <appender name="STD_OUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <!--日志-->
+    <root level="${logback-level:-INFO}">
+        <appender-ref ref="STD_OUT"/>
+    </root>
+</configuration>
