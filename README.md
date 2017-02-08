@@ -17,8 +17,3 @@
 * api-xxx 业务模块api
 * service-xxx 业务模块实现
 * web-xxx web模块
-
-## RoadMap
-
-1. 优化日志[Ok]
-2. 优化配置

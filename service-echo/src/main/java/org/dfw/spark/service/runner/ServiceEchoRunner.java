@@ -2,6 +2,7 @@ package org.dfw.spark.service.runner;
 
 import org.dfw.spark.core.conf.LogbackConf;
 import org.dfw.spark.core.conf.MotanConf;
+import org.dfw.spark.core.kit.PropertiesKit;
 import org.dfw.spark.core.runner.JarRunner;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,7 +17,10 @@ public class ServiceEchoRunner {
     public static class AppMotanConf extends MotanConf {
 
         public AppMotanConf() {
-            super(true, "192.168.137.32:2181", 8020, "1.0.0");
+            super(true,
+                    PropertiesKit.get("core.motan.zk"),
+                    Integer.valueOf(PropertiesKit.get("service.echo.motan.port")),
+                    PropertiesKit.get("service.echo.motan.version"));
         }
     }
 
@@ -24,7 +28,8 @@ public class ServiceEchoRunner {
     public static class AppLogbackConf extends LogbackConf {
 
         public AppLogbackConf() {
-            super("/var/log/service/", "TRACE");
+            super(PropertiesKit.get("service.echo.logback.dir"),
+                    PropertiesKit.get("service.echo.logback.level"));
         }
     }
 }

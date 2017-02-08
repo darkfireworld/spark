@@ -4,6 +4,7 @@ import org.dfw.spark.core.conf.ExecutorConf;
 import org.dfw.spark.core.conf.LogbackConf;
 import org.dfw.spark.core.conf.MotanConf;
 import org.dfw.spark.core.conf.MvcConf;
+import org.dfw.spark.core.kit.PropertiesKit;
 import org.dfw.spark.core.runner.WebRunner;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,14 +14,20 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WebEchoRunner {
     static public void main(String[] args) throws Exception {
-        new WebRunner().start("/", 8080);
+
+        // 启动server
+        new WebRunner().start(PropertiesKit.get("web.echo.server.context", "/"),
+                Integer.valueOf(PropertiesKit.get("web.echo.server.port", "80")));
     }
 
     @Configuration
     public static class AppMotanConf extends MotanConf {
 
         public AppMotanConf() {
-            super(true, "192.168.137.32:2181", 8020, "1.0.0");
+            super(true,
+                    PropertiesKit.get("core.motan.zk"),
+                    Integer.valueOf(PropertiesKit.get("web.echo.motan.port")),
+                    PropertiesKit.get("web.echo.motan.version"));
         }
     }
 
@@ -38,7 +45,8 @@ public class WebEchoRunner {
     public static class AppLogbackConf extends LogbackConf {
 
         public AppLogbackConf() {
-            super("/var/log/web/", "TRACE");
+            super(PropertiesKit.get("web.echo.logback.dir"),
+                    PropertiesKit.get("web.echo.logback.level"));
         }
     }
 }

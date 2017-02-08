@@ -43,6 +43,9 @@
                 <!--motan-->
                 <web.echo.motan.port>9502</web.echo.motan.port>
                 <web.echo.motan.version>${project.parent.version}</web.echo.motan.version>
+                <!--server-->
+                <web.echo.server.context>/</web.echo.server.context>
+                <web.echo.server.port>8080</web.echo.server.port>
             </properties>
         </profile>
         <!--测试环境-->
@@ -69,6 +72,9 @@
                 <!--motan-->
                 <web.echo.motan.port>9502</web.echo.motan.port>
                 <web.echo.motan.version>${project.parent.version}</web.echo.motan.version>
+                <!--server-->
+                <web.echo.server.context>/</web.echo.server.context>
+                <web.echo.server.port>8080</web.echo.server.port>
             </properties>
         </profile>
         <!--生产环境-->
@@ -95,6 +101,9 @@
                 <!--motan-->
                 <web.echo.motan.port>9502</web.echo.motan.port>
                 <web.echo.motan.version>${project.parent.version}</web.echo.motan.version>
+                <!--server-->
+                <web.echo.server.context>/</web.echo.server.context>
+                <web.echo.server.port>8080</web.echo.server.port>
             </properties>
         </profile>
     </profiles>
@@ -102,7 +111,7 @@
 
     <!--依赖版本-->
     <properties>
-        <spring.version>4.2.5.RELEASE</spring.version>
+        <spring.version>4.3.5.RELEASE</spring.version>
         <beetl.version>2.5.2</beetl.version>
         <commons-codec.version>1.10</commons-codec.version>
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
