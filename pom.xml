@@ -7,7 +7,7 @@
     <groupId>org.dfw</groupId>
     <artifactId>spark</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <!--模块信息-->
     <modules>
@@ -22,17 +22,80 @@
         <!--开发环境（本地）-->
         <profile>
             <id>dev</id>
-            <properties/>
+            <properties>
+                <!--core(通用)属性配置-->
+                <!--域名和调试模式设置-->
+                <core.domain>https://github.com</core.domain>
+                <core.debug>TRUE</core.debug>
+                <!--motan设置-->
+                <core.motan.zk>10.246.75.18:2181</core.motan.zk>
+                <!--service.echo相关配置配置-->
+                <!--日志-->
+                <service.echo.logback.level>INFO</service.echo.logback.level>
+                <service.echo.logback.dir/>
+                <!--motan-->
+                <service.echo.motan.port>9501</service.echo.motan.port>
+                <service.echo.motan.version>${project.parent.version}</service.echo.motan.version>
+                <!--web.echo相关配置-->
+                <!--日志-->
+                <web.echo.logback.level>INFO</web.echo.logback.level>
+                <web.echo.logback.dir/>
+                <!--motan-->
+                <web.echo.motan.port>9502</web.echo.motan.port>
+                <web.echo.motan.version>${project.parent.version}</web.echo.motan.version>
+            </properties>
         </profile>
         <!--测试环境-->
         <profile>
             <id>test</id>
-            <properties/>
+            <properties>
+                <!--core(通用)属性配置-->
+                <!--域名和调试模式设置-->
+                <core.domain>https://github.com</core.domain>
+                <core.debug>TRUE</core.debug>
+                <!--motan设置-->
+                <core.motan.zk>10.246.75.18:2181</core.motan.zk>
+                <!--service.echo相关配置配置-->
+                <!--日志-->
+                <service.echo.logback.level>INFO</service.echo.logback.level>
+                <service.echo.logback.dir>/var/log/service-echo/</service.echo.logback.dir>
+                <!--motan-->
+                <service.echo.motan.port>9501</service.echo.motan.port>
+                <service.echo.motan.version>${project.parent.version}</service.echo.motan.version>
+                <!--web.echo相关配置-->
+                <!--日志-->
+                <web.echo.logback.level>INFO</web.echo.logback.level>
+                <web.echo.logback.dir>/var/log/web-echo/</web.echo.logback.dir>
+                <!--motan-->
+                <web.echo.motan.port>9502</web.echo.motan.port>
+                <web.echo.motan.version>${project.parent.version}</web.echo.motan.version>
+            </properties>
         </profile>
         <!--生产环境-->
         <profile>
             <id>prod</id>
-            <properties/>
+            <properties>
+                <!--core(通用)属性配置-->
+                <!--域名和调试模式设置-->
+                <core.domain>https://github.com</core.domain>
+                <core.debug>FALSE</core.debug>
+                <!--motan设置-->
+                <core.motan.zk>zk.com:2181</core.motan.zk>
+                <!--service.echo相关配置配置-->
+                <!--日志-->
+                <service.echo.logback.level>INFO</service.echo.logback.level>
+                <service.echo.logback.dir>/var/log/service-echo/</service.echo.logback.dir>
+                <!--motan-->
+                <service.echo.motan.port>9501</service.echo.motan.port>
+                <service.echo.motan.version>${project.parent.version}</service.echo.motan.version>
+                <!--web.echo相关配置-->
+                <!--日志-->
+                <web.echo.logback.level>INFO</web.echo.logback.level>
+                <web.echo.logback.dir>/var/log/web-echo/</web.echo.logback.dir>
+                <!--motan-->
+                <web.echo.motan.port>9502</web.echo.motan.port>
+                <web.echo.motan.version>${project.parent.version}</web.echo.motan.version>
+            </properties>
         </profile>
     </profiles>
 
@@ -61,11 +124,18 @@
         <mybatis.spring.version>1.3.0</mybatis.spring.version>
         <spring.session.version>1.2.2.RELEASE</spring.session.version>
         <motan.version>0.2.2</motan.version>
+        <es-version>2.4.1</es-version>
     </properties>
 
     <!--依赖-->
     <dependencyManagement>
         <dependencies>
+            <!--ES-->
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${es-version}</version>
+            </dependency>
             <!--mybatis-->
             <dependency>
                 <groupId>org.mybatis</groupId>
