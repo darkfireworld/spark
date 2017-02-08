@@ -555,6 +555,7 @@
                     <failOnError>false</failOnError>
                     <show>private</show>
                     <nohelp>true</nohelp>
+                    <aggregate>true</aggregate>
                 </configuration>
                 <executions>
                     <execution>
