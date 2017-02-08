@@ -7,7 +7,7 @@
     <groupId>org.dfw</groupId>
     <artifactId>spark</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <!--模块信息-->
     <modules>
@@ -557,14 +557,17 @@
                     <nohelp>true</nohelp>
                     <aggregate>true</aggregate>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>javadoc</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!--
+                    手动执行javadoc生成
+                    <executions>
+                       <execution>
+                           <phase>package</phase>
+                           <goals>
+                               <goal>javadoc</goal>
+                           </goals>
+                       </execution>
+                   </executions>
+                   -->
             </plugin>
         </plugins>
         <!--插件管理-->
