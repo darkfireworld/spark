@@ -113,16 +113,16 @@
     <properties>
         <spring.version>4.3.5.RELEASE</spring.version>
         <beetl.version>2.5.2</beetl.version>
-        <commons-codec.version>1.10</commons-codec.version>
-        <commons-fileupload.version>1.3.1</commons-fileupload.version>
-        <commons-io.version>2.4</commons-io.version>
+        <commons.codec.version>1.10</commons.codec.version>
+        <commons.fileupload.version>1.3.1</commons.fileupload.version>
+        <commons.io.version>2.4</commons.io.version>
         <druid.version>1.0.21</druid.version>
         <fastjson.version>1.2.13</fastjson.version>
         <guava.version>19.0</guava.version>
         <slf4j.version>1.7.18</slf4j.version>
         <logback.version>1.1.7</logback.version>
         <janino.version>3.0.6</janino.version>
-        <java-mail.version>1.4.7</java-mail.version>
+        <java.mail.version>1.4.7</java.mail.version>
         <mysql.version>5.1.39</mysql.version>
         <okhttp3.version>3.5.0</okhttp3.version>
         <aspectjrt.version>1.5.4</aspectjrt.version>
@@ -133,7 +133,7 @@
         <mybatis.spring.version>1.3.0</mybatis.spring.version>
         <spring.session.version>1.2.2.RELEASE</spring.session.version>
         <motan.version>0.2.2</motan.version>
-        <es-version>2.4.1</es-version>
+        <es.version>2.4.1</es.version>
     </properties>
 
     <!--依赖-->
@@ -143,7 +143,7 @@
             <dependency>
                 <groupId>org.elasticsearch</groupId>
                 <artifactId>elasticsearch</artifactId>
-                <version>${es-version}</version>
+                <version>${es.version}</version>
             </dependency>
             <!--mybatis-->
             <dependency>
@@ -210,7 +210,7 @@
             <dependency>
                 <groupId>javax.mail</groupId>
                 <artifactId>mail</artifactId>
-                <version>${java-mail.version}</version>
+                <version>${java.mail.version}</version>
             </dependency>
 
             <!--slf4j系列-->
@@ -284,21 +284,21 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
+                <version>${commons.io.version}</version>
             </dependency>
 
             <!--commons-fileupload-->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
-                <version>${commons-fileupload.version}</version>
+                <version>${commons.fileupload.version}</version>
             </dependency>
 
             <!--commons-codec-->
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>${commons-codec.version}</version>
+                <version>${commons.codec.version}</version>
             </dependency>
 
             <!--beetl-->
